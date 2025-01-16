@@ -1,0 +1,119 @@
+.todo-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+  
+    .add-todo {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+  
+      .add-input {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+  
+        &:focus {
+          outline: none;
+          border-color: #4dabf7;
+          box-shadow: 0 0 0 3px rgba(77, 171, 247, 0.2);
+        }
+      }
+  
+      button {
+        padding: 0.8rem 1.5rem;
+        background-color: #4dabf7;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+  
+        &:hover {
+          background-color: #339af0;
+          transform: translateY(-1px);
+        }
+  
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  
+    .todo-list {
+      list-style: none;
+      padding: 0;
+  
+      li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        border-bottom: 1px solid #e9ecef;
+        transition: all 0.2s ease;
+  
+        &:hover {
+          background-color: #f8f9fa;
+        }
+  
+        .checkbox-input {
+          width: 20px;
+          height: 20px;
+          border: 2px solid #ced4da;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+  
+          &:checked {
+            background-color: #4dabf7;
+            border-color: #4dabf7;
+          }
+        }
+  
+        span {
+          flex: 1;
+          color: #495057;
+          transition: all 0.3s ease;
+  
+          &.completed {
+            text-decoration: line-through;
+            color: #adb5bd;
+          }
+        }
+  
+        button {
+          padding: 0.5rem 1rem;
+          background-color: #ff6b6b;
+          color: white;
+          border: none;
+          border-radius: 6px;
+          font-size: 0.9rem;
+          cursor: pointer;
+          opacity: 0;
+          transition: all 0.2s ease;
+  
+          &:hover {
+            background-color: #fa5252;
+          }
+        }
+  
+        &:hover button {
+          opacity: 1;
+        }
+      }
+    }
+  }

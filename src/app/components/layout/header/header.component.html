@@ -1,1 +1,12 @@
-<p>header works!</p>
+<header class="header">
+    <h1>Todo App</h1>
+    <nav>
+      @if (isLoggedIn$ | async) {
+        <button routerLink="/todos">Mes tâches</button>
+        <button (click)="logout()">Déconnexion</button>
+      } @else {
+        <button routerLink="/login">Connexion</button>
+        <button routerLink="/register">Inscription</button>
+      }
+    </nav>
+  </header>
