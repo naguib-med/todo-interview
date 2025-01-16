@@ -1,1 +1,28 @@
-<p>todo-list works!</p>
+<div class="todo-container">
+    <h2>Mes tâches</h2>
+    <div class="add-todo">
+        <input 
+            class="add-input"
+            [(ngModel)]="newTodoTitle"
+            placeholder="Ajouter une nouvelle tâche..."
+            (keyup.enter)="addTodo()">
+        <button (click)="addTodo()">Ajouter</button>
+    </div>
+    <ul class="todo-list">
+        @for (todo of todos$ | async; track todo.id) {
+            <li>
+                <input
+                    class="checkbox-input"
+                    type="checkbox"
+                    [checked]="todo.completed"
+                    (change)="toggleTodo(todo.id)">
+                <span [class.completed]="todo.completed">
+                    {{todo.title}}
+                </span>
+                <button (click)="deleteTodo(todo.id)">
+                    Supprimer
+                </button>
+            </li>
+        }
+    </ul>
+</div>
