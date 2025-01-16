@@ -10,19 +10,11 @@
     </div>
     <ul class="todo-list">
         @for (todo of todos$ | async; track todo.id) {
-            <li>
-                <input
-                    class="checkbox-input"
-                    type="checkbox"
-                    [checked]="todo.completed"
-                    (change)="toggleTodo(todo.id)">
-                <span [class.completed]="todo.completed">
-                    {{todo.title}}
-                </span>
-                <button (click)="deleteTodo(todo.id)">
-                    Supprimer
-                </button>
-            </li>
+            <app-todo-item
+                [todo]="todo"
+                (toggleComplete)="toggleTodo($event)"
+                (deleteTodo)="deleteTodo($event)"
+            ></app-todo-item>
         }
     </ul>
 </div>

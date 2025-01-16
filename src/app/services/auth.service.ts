@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -24,6 +24,17 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     return !!localStorage.getItem('token');
+  }
+
+  register(userData: { name: string; email: string; password: string }) {
+    // Simuler un appel API
+    return new Observable((observer) => {
+      setTimeout(() => {
+        // Simuler un succès
+        observer.next({ success: true });
+        observer.complete();
+      }, 1000);
+    });
   }
 
   constructor() {}

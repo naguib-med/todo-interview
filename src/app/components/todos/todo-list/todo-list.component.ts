@@ -2,10 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TodoService } from '../../../services/todo.service';
+import { TodoItemComponent } from '../todo-item/todo-item.component';
 
 @Component({
   selector: 'app-todo-list',
-  imports: [CommonModule, FormsModule],
+  standalone: true,
+  imports: [CommonModule, FormsModule, TodoItemComponent],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss',
 })
